@@ -1,5 +1,10 @@
 #!/bin/bash
-
+:<<'END'
+copy shell file and open terminal same directory
+sh ./create-next-app-shell.sh
+just type your project name
+will run create-next-app and setup prettier and eslint with airbnb code convention
+END
 echo "Enter your project name(do not type uppercase)"
 read projectName
 
@@ -7,6 +12,7 @@ npx create-next-app --typescript "$projectName"
 cd "$projectName"
 npx install-peerdeps --dev eslint-config-airbnb
 npm install -D eslint-config-prettier eslint-plugin-prettier
+npm i -D @typescript-eslint/eslint-plugin
 
 echo "{" > .eslintrc.json
 echo "  \"extends\": [\"airbnb\", \"plugin:prettier/recommended\", \"next/core-web-vitals\"]," >> .eslintrc.json
@@ -23,7 +29,10 @@ echo "        \"unnamedComponents\": \"arrow-function\"" >> .eslintrc.json
 echo "      }" >> .eslintrc.json
 echo "    ]," >> .eslintrc.json
 echo "    \"prettier/prettier\": [\"error\"]," >> .eslintrc.json
-echo "    \"react/jsx-props-no-spreading\": \"off\"" >> .eslintrc.json
+echo "    \"react/jsx-props-no-spreading\": \"off\"," >> .eslintrc.json
+echo "    \"no-unused-vars\": \"off\"," >> .eslintrc.json
+echo "    \"@typescript-eslint/no-unused-vars\": [\"error\"]" >> .eslintrc.json
+
 echo "  }" >> .eslintrc.json
 echo "}" >> .eslintrc.json
 
