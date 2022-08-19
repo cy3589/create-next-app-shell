@@ -5,6 +5,8 @@ sh ./create-next-app-shell.sh
 just type your project name
 will run create-next-app and setup prettier and eslint with airbnb code convention
 END
+
+echo "Init Next App With chad's shell (With Storybook)"
 echo "Enter your project name(do not type uppercase)"
 read projectName
 
@@ -322,7 +324,7 @@ mv -f ./stories ./src
 
 echo "# My $projectName App" > README.md
 
-commitMessage="Re-Initialize With Chad Starter Shell by $USER@$(hostname -s) at $(date)"
+commitMessage="Re-Initialize With chad's shell by $USER@$(hostname -s) at $(date)"
 GIT=`which git`
 REPO_DIR=~/org
 cd ${REPO_DIR}
