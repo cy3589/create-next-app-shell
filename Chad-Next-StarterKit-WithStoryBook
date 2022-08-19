@@ -321,3 +321,10 @@ mv -f ./typings ./src
 mv -f ./stories ./src
 
 echo "# My $projectName App" > README.md
+
+commitMessage="Re-Initialize With Chad Starter Shell by $USER@$(hostname -s) at $(date)"
+GIT=`which git`
+REPO_DIR=~/org
+cd ${REPO_DIR}
+${GIT} add --all .
+${GIT} commit --allow-empty -m "$commitMessage"
